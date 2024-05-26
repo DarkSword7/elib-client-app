@@ -11,7 +11,6 @@ export default async function Home() {
   }
 
   const books = await response.json();
-  console.log("books", books);
 
   return (
     <>
