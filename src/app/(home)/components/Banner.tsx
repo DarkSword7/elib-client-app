@@ -12,6 +12,7 @@ const Banner = () => {
           height={0}
           width={0}
           sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 h-full w-full rounded-lg bg-gray-950 opacity-30" />
         <Image
