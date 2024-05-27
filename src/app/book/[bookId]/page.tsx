@@ -23,14 +23,8 @@ const SingleBookPage = async ({ params }: { params: { bookId: string } }) => {
   }
 
   return (
-    <div className="mx-auto grid max-w-6xl grid-cols-3 gap-10 px-5 py-10">
-      <div className="col-span-2 pr-16 text-primary-950">
-        <h2 className="mb-5 text-5xl font-bold leading-[1.1]">{book.title}</h2>
-        <span className="font-semibold">by {book.author.name}</span>
-        <p className="mt-5 text-lg leading-8">{book.desc}</p>
-        <DownloadButton fileLink={book.file} />
-      </div>
-      <div className="flex justify-end">
+    <div className="mx-auto grid max-w-6xl grid-cols-1 md:grid-cols-3 gap-10 px-5 py-10">
+      <div className="md:flex md:mx-0 justify-end mx-auto">
         <Image
           src={book.coverImage}
           alt={book.title}
@@ -40,6 +34,12 @@ const SingleBookPage = async ({ params }: { params: { bookId: string } }) => {
           sizes="100vw"
           style={{ width: "auto", height: "auto" }}
         />
+      </div>
+      <div className="col-span-2 pr-16 text-primary-950">
+        <h2 className="mb-5 text-5xl font-bold leading-[1.1]">{book.title}</h2>
+        <span className="font-semibold">by {book.author.name}</span>
+        <p className="mt-5 text-lg leading-8">{book.desc}</p>
+        <DownloadButton fileLink={book.file} />
       </div>
     </div>
   );

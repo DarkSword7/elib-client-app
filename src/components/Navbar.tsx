@@ -13,8 +13,8 @@ const Navbar = () => {
                   <Hexagon />
                   <BookIcon />
                 </div>
-                <span className="text-xl font-bold uppercase tracking-tight text-primary-500">
-                  Coders Book
+                <span className="text-xl font-bold text-primary-500">
+                  Elibrary
                 </span>
               </div>
             </Link>

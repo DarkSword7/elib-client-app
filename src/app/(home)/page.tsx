@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import Banner from "./components/Banner";
 import BookList from "./components/BookList";
-import { ThemeProvider } from "@material-tailwind/react";
 import Loading from "@/components/Loading";
 
 export default async function Home() {
