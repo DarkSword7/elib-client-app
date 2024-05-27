@@ -1,21 +1,16 @@
+import { Suspense } from "react";
 import Banner from "./components/Banner";
 import BookList from "./components/BookList";
+import { ThemeProvider } from "@material-tailwind/react";
+import Loading from "@/components/Loading";
 
 export default async function Home() {
-  // Data fetching
-  const response = await fetch(`${process.env.BASE_URL}/books`, {
-    cache: "no-store",
-  });
-  if (!response.ok) {
-    throw new Error("Error while fetching books");
-  }
-
-  const books = await response.json();
-
   return (
     <>
       <Banner />
-      <BookList books={books} />
+      <Suspense fallback={<Loading />}>
+        <BookList />
+      </Suspense>
     </>
   );
 }
